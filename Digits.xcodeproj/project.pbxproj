@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6EB442128BE877300327C92 /* GuessModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EB442028BE877300327C92 /* GuessModel.m */; };
 		CC4D6CBB26D56FBA008E7762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D6CBA26D56FBA008E7762 /* AppDelegate.swift */; };
 		CC4D6CBD26D56FBA008E7762 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D6CBC26D56FBA008E7762 /* SceneDelegate.swift */; };
 		CC4D6CBF26D56FBA008E7762 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D6CBE26D56FBA008E7762 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6EB441E28BE877300327C92 /* Digits-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Digits-Bridging-Header.h"; sourceTree = "<group>"; };
+		B6EB441F28BE877300327C92 /* GuessModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuessModel.h; sourceTree = "<group>"; };
+		B6EB442028BE877300327C92 /* GuessModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessModel.m; sourceTree = "<group>"; };
 		CC4D6CB726D56FBA008E7762 /* Digits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4D6CBA26D56FBA008E7762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC4D6CBC26D56FBA008E7762 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,10 +63,13 @@
 				CC4D6CBA26D56FBA008E7762 /* AppDelegate.swift */,
 				CC4D6CBC26D56FBA008E7762 /* SceneDelegate.swift */,
 				CC4D6CBE26D56FBA008E7762 /* ViewController.swift */,
+				B6EB441F28BE877300327C92 /* GuessModel.h */,
+				B6EB442028BE877300327C92 /* GuessModel.m */,
 				CC4D6CC026D56FBA008E7762 /* Main.storyboard */,
 				CC4D6CC326D56FC6008E7762 /* Assets.xcassets */,
 				CC4D6CC526D56FC6008E7762 /* LaunchScreen.storyboard */,
 				CC4D6CC826D56FC6008E7762 /* Info.plist */,
+				B6EB441E28BE877300327C92 /* Digits-Bridging-Header.h */,
 			);
 			path = Digits;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 				TargetAttributes = {
 					CC4D6CB626D56FBA008E7762 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -140,6 +148,7 @@
 				CC4D6CBF26D56FBA008E7762 /* ViewController.swift in Sources */,
 				CC4D6CBB26D56FBA008E7762 /* AppDelegate.swift in Sources */,
 				CC4D6CBD26D56FBA008E7762 /* SceneDelegate.swift in Sources */,
+				B6EB442128BE877300327C92 /* GuessModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = Digits/Info.plist;
@@ -296,6 +306,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.Digits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Digits/Digits-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -306,6 +318,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = Digits/Info.plist;
@@ -316,6 +329,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.Digits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Digits/Digits-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

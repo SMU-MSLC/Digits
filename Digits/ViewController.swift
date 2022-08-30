@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var guess:GuessModel = GuessModel()
 
     @IBOutlet weak var helloWorldLabel: UILabel!
     override func viewDidLoad() {
@@ -20,6 +22,7 @@ class ViewController: UIViewController {
     @IBAction func buttonClicked(_ sender: Any) {
         
         self.helloWorldLabel.text = "Goodbye World!"
+        guess.makeAGuess(5)
     }
     
 }
