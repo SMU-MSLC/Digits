@@ -22,14 +22,14 @@
     return _correctNum;
 }
 
--(NSInteger) makeAGuess:(NSInteger) guess{
+-(GuessValue) makeAGuess:(NSInteger) guess{
     NSInteger currentValue = [self.correctNum intValue];
     if( currentValue == guess)
-        return 1;
+        return GuessValueCorrect;
     else if( currentValue < guess)
-        return 0;
+        return GuessValueLower;
     else
-        return 2;
+        return GuessValueHigher;
     
 }
 
