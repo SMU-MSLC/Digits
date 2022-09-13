@@ -35,9 +35,12 @@
                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DNr-RH-7cS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-GA-Uhc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-GA-Uhc">
                                 <rect key="frame" x="158" y="488" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Ql2-4s-IeC"/>
+                                    <constraint firstAttribute="height" constant="35" id="Yxy-FB-BDa"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="New"/>
                                 <connections>
@@ -50,6 +53,8 @@
                         <constraints>
                             <constraint firstItem="32B-tG-fBc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BLH-JK-0eX"/>
                             <constraint firstItem="wB9-0V-9xY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="0.5" id="cv2-dq-AAQ"/>
+                            <constraint firstItem="Rdf-GA-Uhc" firstAttribute="centerX" secondItem="wB9-0V-9xY" secondAttribute="centerX" id="foJ-xn-jw7"/>
+                            <constraint firstItem="Rdf-GA-Uhc" firstAttribute="top" secondItem="wB9-0V-9xY" secondAttribute="bottom" constant="14" id="kYK-B7-3RG"/>
                             <constraint firstItem="wB9-0V-9xY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="0.5" id="pmp-pE-468"/>
                             <constraint firstItem="32B-tG-fBc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sIG-M2-SaE"/>
                         </constraints>
@@ -63,21 +68,80 @@
             </objects>
             <point key="canvasLocation" x="1067.6923076923076" y="88.151658767772503"/>
         </scene>
-        <!--View Controller-->
+        <!--Guess View Controller-->
         <scene sceneID="OTp-GC-dsa">
             <objects>
-                <viewController id="GvM-Uf-fQV" sceneMemberID="viewController">
+                <viewController id="GvM-Uf-fQV" customClass="GuessViewController" customModule="Digits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GCH-X8-3Ys">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess a Number!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93h-Yb-sym">
+                                <rect key="frame" x="16" y="88" width="358" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sia-pu-Ynl">
+                                <rect key="frame" x="16" y="117" width="358" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wht-F6-uQJ">
+                                <rect key="frame" x="16" y="159" width="358" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Make a Guess"/>
+                                <connections>
+                                    <action selector="makeGuess:" destination="GvM-Uf-fQV" eventType="touchUpInside" id="QGb-Vr-LER"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQf-UH-G5c">
+                                <rect key="frame" x="16" y="198" width="358" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="Hge-JO-GQl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Jp7-tT-XdL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Jp7-tT-XdL" firstAttribute="trailing" secondItem="WQf-UH-G5c" secondAttribute="trailing" constant="16" id="2Qq-KG-aHV"/>
+                            <constraint firstItem="wht-F6-uQJ" firstAttribute="leading" secondItem="Jp7-tT-XdL" secondAttribute="leading" constant="16" id="6Qb-ov-g8h"/>
+                            <constraint firstItem="sia-pu-Ynl" firstAttribute="top" secondItem="93h-Yb-sym" secondAttribute="bottom" constant="8" symbolic="YES" id="6uc-w0-yqC"/>
+                            <constraint firstItem="Jp7-tT-XdL" firstAttribute="trailing" secondItem="sia-pu-Ynl" secondAttribute="trailing" constant="16" id="EgD-Z8-ko2"/>
+                            <constraint firstItem="Jp7-tT-XdL" firstAttribute="trailing" secondItem="93h-Yb-sym" secondAttribute="trailing" constant="16" id="Fc6-hd-O4j"/>
+                            <constraint firstItem="93h-Yb-sym" firstAttribute="leading" secondItem="Jp7-tT-XdL" secondAttribute="leading" constant="16" id="SrU-Qz-RLf"/>
+                            <constraint firstItem="93h-Yb-sym" firstAttribute="top" secondItem="Jp7-tT-XdL" secondAttribute="top" id="Wuo-Kt-lBK"/>
+                            <constraint firstItem="WQf-UH-G5c" firstAttribute="top" secondItem="wht-F6-uQJ" secondAttribute="bottom" constant="8" symbolic="YES" id="dia-Wl-eHp"/>
+                            <constraint firstItem="wht-F6-uQJ" firstAttribute="top" secondItem="sia-pu-Ynl" secondAttribute="bottom" constant="8" symbolic="YES" id="h3W-gC-kwJ"/>
+                            <constraint firstItem="sia-pu-Ynl" firstAttribute="leading" secondItem="Jp7-tT-XdL" secondAttribute="leading" constant="16" id="l2D-ib-zW2"/>
+                            <constraint firstItem="Jp7-tT-XdL" firstAttribute="trailing" secondItem="wht-F6-uQJ" secondAttribute="trailing" constant="16" id="nqt-Z3-dvI"/>
+                            <constraint firstItem="WQf-UH-G5c" firstAttribute="leading" secondItem="Jp7-tT-XdL" secondAttribute="leading" constant="16" id="sc2-1x-d6S"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="bSH-xY-E8C" appends="YES" id="pg5-bj-1wZ"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ytb-7j-ZCV"/>
+                    <connections>
+                        <outlet property="feedbackLabel" destination="93h-Yb-sym" id="siq-gA-Shy"/>
+                        <outlet property="guessButton" destination="wht-F6-uQJ" id="yRd-Q0-g28"/>
+                        <outlet property="largeFeedbackLabel" destination="WQf-UH-G5c" id="RL8-cy-upB"/>
+                        <outlet property="textFieldGuess" destination="sia-pu-Ynl" id="37F-Vf-cMK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJN-eX-PHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bSH-xY-E8C">
+                    <connections>
+                        <action selector="tapGestureRecognized:" destination="GvM-Uf-fQV" id="nEz-xN-Q2W"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1632" y="95"/>
+            <point key="canvasLocation" x="1947.6923076923076" y="87.440758293838854"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bJg-eQ-41p">

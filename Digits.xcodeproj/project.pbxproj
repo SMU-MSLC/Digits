@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B6EB442128BE877300327C92 /* GuessModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EB442028BE877300327C92 /* GuessModel.m */; };
+		B6EB442528D0F73600327C92 /* GuessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EB442428D0F73600327C92 /* GuessViewController.swift */; };
 		CC4D6CBB26D56FBA008E7762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D6CBA26D56FBA008E7762 /* AppDelegate.swift */; };
 		CC4D6CBD26D56FBA008E7762 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D6CBC26D56FBA008E7762 /* SceneDelegate.swift */; };
 		CC4D6CBF26D56FBA008E7762 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D6CBE26D56FBA008E7762 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 		B6EB441E28BE877300327C92 /* Digits-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Digits-Bridging-Header.h"; sourceTree = "<group>"; };
 		B6EB441F28BE877300327C92 /* GuessModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuessModel.h; sourceTree = "<group>"; };
 		B6EB442028BE877300327C92 /* GuessModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessModel.m; sourceTree = "<group>"; };
+		B6EB442428D0F73600327C92 /* GuessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessViewController.swift; sourceTree = "<group>"; };
 		CC4D6CB726D56FBA008E7762 /* Digits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4D6CBA26D56FBA008E7762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC4D6CBC26D56FBA008E7762 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				B6EB441F28BE877300327C92 /* GuessModel.h */,
 				B6EB442028BE877300327C92 /* GuessModel.m */,
 				CC4D6CC026D56FBA008E7762 /* Main.storyboard */,
+				B6EB442428D0F73600327C92 /* GuessViewController.swift */,
 				CC4D6CC326D56FC6008E7762 /* Assets.xcassets */,
 				CC4D6CC526D56FC6008E7762 /* LaunchScreen.storyboard */,
 				CC4D6CC826D56FC6008E7762 /* Info.plist */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC4D6CBF26D56FBA008E7762 /* ViewController.swift in Sources */,
+				B6EB442528D0F73600327C92 /* GuessViewController.swift in Sources */,
 				CC4D6CBB26D56FBA008E7762 /* AppDelegate.swift in Sources */,
 				CC4D6CBD26D56FBA008E7762 /* SceneDelegate.swift in Sources */,
 				B6EB442128BE877300327C92 /* GuessModel.m in Sources */,
