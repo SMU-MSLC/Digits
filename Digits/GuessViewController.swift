@@ -61,15 +61,15 @@ class GuessViewController: UIViewController, UITextFieldDelegate {
         var anim = UIView.AnimationOptions.transitionCrossDissolve
         var duration = 0.33
         
-        var textToAdd = "\(guess)"
+        var textToAdd = ""
         var textForLabel = ""
         switch self.guessModel.makeAGuess(guess) {
             case GuessValueLower:
                 textForLabel = "Lower!"
-                textToAdd += "<, "
+                textToAdd += "X<"
             case GuessValueHigher:
                 textForLabel = "Higher!"
-                textToAdd += ">, "
+                textToAdd += "X>"
             case GuessValueCorrect:
                 textForLabel = "Correct!"
                 textToAdd += " Correct!! "
@@ -81,6 +81,7 @@ class GuessViewController: UIViewController, UITextFieldDelegate {
             default:
                 print("never be here")
         }
+        textToAdd += "\(guess), "
         
         
         // update the user feedback
