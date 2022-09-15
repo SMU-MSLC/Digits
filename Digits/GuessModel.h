@@ -18,6 +18,8 @@ typedef enum : NSUInteger {
 @interface GuessModel : NSObject
 
 -(GuessValue) makeAGuess:(NSInteger) guess;
+-(NSInteger) getLowerRange;
+-(NSInteger) getHigherRange;
 
 @end
 

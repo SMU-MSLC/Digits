@@ -26,6 +26,21 @@ class GuessViewController: UIViewController, UITextFieldDelegate {
         
         self.textFieldGuess.delegate = self
         self.textFieldGuess.becomeFirstResponder()
+        
+        self.largeFeedbackLabel.text = "\(guessModel.getLowerRange()) < X < \(guessModel.getHigherRange())"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.transition(with: self.feedbackLabel,
+              duration: 1.0,
+              options: UIView.AnimationOptions.transitionFlipFromLeft,
+              animations: {
+                  self.feedbackLabel.text = "Guess an integer, 0-100!"
+              },
+              completion: nil)
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -56,6 +71,7 @@ class GuessViewController: UIViewController, UITextFieldDelegate {
         self.textFieldGuess.resignFirstResponder()
     }
     
+    //MARK: Utility Function
     func interpret(guess:Int){
         // setup some animation for labels
         var anim = UIView.AnimationOptions.transitionCrossDissolve
@@ -63,16 +79,18 @@ class GuessViewController: UIViewController, UITextFieldDelegate {
         
         var textToAdd = ""
         var textForLabel = ""
+        
         switch self.guessModel.makeAGuess(guess) {
             case GuessValueLower:
                 textForLabel = "Lower!"
-                textToAdd += "X<"
+                
             case GuessValueHigher:
                 textForLabel = "Higher!"
-                textToAdd += "X>"
+                
             case GuessValueCorrect:
                 textForLabel = "Correct!"
                 textToAdd += " Correct!! "
+            
                 self.guessButton.isEnabled = false
                 anim = .transitionFlipFromRight
                 duration = 3.0
@@ -81,7 +99,8 @@ class GuessViewController: UIViewController, UITextFieldDelegate {
             default:
                 print("never be here")
         }
-        textToAdd += "\(guess), "
+        
+        textToAdd = "\(guessModel.getLowerRange()) < X < \(guessModel.getHigherRange())"
         
         
         // update the user feedback
@@ -89,7 +108,7 @@ class GuessViewController: UIViewController, UITextFieldDelegate {
               duration: duration,
               options: anim,
               animations: {
-                    self.largeFeedbackLabel.text! += textToAdd
+                    self.largeFeedbackLabel.text! = textToAdd
                           },
               completion: nil)
         

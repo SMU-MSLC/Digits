@@ -10,6 +10,8 @@
 @interface GuessModel ()
 
 @property (strong, nonatomic) NSNumber* correctNum;
+@property (strong, nonatomic) NSMutableArray* range;
+
 
 @end
 
@@ -22,15 +24,39 @@
     return _correctNum;
 }
 
+-(NSArray*) range{
+    if(!_range)
+        _range = [@[@1,@100] mutableCopy];
+    return _range;
+}
+
 -(GuessValue) makeAGuess:(NSInteger) guess{
     NSInteger currentValue = [self.correctNum intValue];
-    if( currentValue == guess)
+    if( currentValue == guess){
+        self.range[0] = @(guess);
+        self.range[1] = @(guess);
         return GuessValueCorrect;
-    else if( currentValue < guess)
+    }
+    else if( currentValue < guess){
+        if(guess < [self.range[1] intValue])
+            self.range[1] = @(guess);
         return GuessValueLower;
-    else
-        return GuessValueHigher;
+    }
+    else{
+        if(guess > [self.range[0] intValue])
+            self.range[0] = @(guess);
     
+        return GuessValueHigher;
+    }
+    
+}
+
+-(NSInteger) getLowerRange{
+    return [self.range[0] intValue];
+}
+
+-(NSInteger) getHigherRange{
+    return [self.range[1] intValue];
 }
 
 @end
